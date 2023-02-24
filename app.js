@@ -33,10 +33,10 @@ app.use(cors());
 app.use(xss());
 
 
-app.get('/', (req, res) => {
-  res.send('<h1>Audits API</h1><a href="/api-docs">Documentation</a>');
-});
-//app.use(express.static('public'))
+// app.get('/', (req, res) => {
+//   res.send('<h1>Audits API</h1><a href="/api-docs">Documentation</a>');
+// });
+app.use(express.static('public'))
 
 
 // routes

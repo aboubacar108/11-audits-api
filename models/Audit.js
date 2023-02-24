@@ -24,11 +24,13 @@ const AuditSchema = new mongoose.Schema({
     default: 'Finance',
   },
   highRiskAeras: {
-    type: Boolean, 
-    default: false,
+    type: String, 
+    enum: ['Yes','No'],
+    default: 'No',
   },
   startDate: {
-    type: Date, 
+    type: Date,
+    default: Date.now(), 
   },
   status: {
     type: String, 
@@ -36,17 +38,16 @@ const AuditSchema = new mongoose.Schema({
     default: 'Not started',
   },
   completionDate: {
-    type: Date, 
+    type: Date,
+    default: Date.now(),
   },
   auditFindings: {
     type: Number,
-    min: [1,'Completed audit must have at least one findings'],
-    max: 100,
+    default: 0,
   },
   timeSpent: {
     type: Number,
-    min: [120, 'Completed audit should last at least 120 hours'],
-    max: 600,
+    default: 0,
   },
   createdBy:{
     type:mongoose.Types.ObjectId,
@@ -54,5 +55,15 @@ const AuditSchema = new mongoose.Schema({
     required:[true, 'Please provide user'],
   }
 },{timestamps:true})
+
+// Returns a date in 'yyyy-MM-dd' format
+// AuditSchema.methods.formatDate = function(datePropery) {
+//   const newDate = new Date(this[dateProperty]);
+//   let formattedDate = `${ newDate.getFullYear() }-`;
+//       formattedDate += `${ `0${ newDate.getMonth() + 1 }`.slice(-2) }-`;  // for double digit month
+//       formattedDate += `${ `0${ newDate.getDate() }`.slice(-2) }`;        // for double digit day
+//   return formattedDate;
+// }
+
 
 module.exports = mongoose.model('Audit', AuditSchema)
