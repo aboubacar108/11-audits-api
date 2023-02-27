@@ -29,8 +29,7 @@ const AuditSchema = new mongoose.Schema({
     default: 'No',
   },
   startDate: {
-    type: Date,
-    default: Date.now(), 
+    type: String,
   },
   status: {
     type: String, 
@@ -38,8 +37,7 @@ const AuditSchema = new mongoose.Schema({
     default: 'Not started',
   },
   completionDate: {
-    type: Date,
-    default: Date.now(),
+    type: String,
   },
   auditFindings: {
     type: Number,
@@ -54,16 +52,8 @@ const AuditSchema = new mongoose.Schema({
     ref:'User',
     required:[true, 'Please provide user'],
   }
-},{timestamps:true})
+})
 
-// Returns a date in 'yyyy-MM-dd' format
-// AuditSchema.methods.formatDate = function(datePropery) {
-//   const newDate = new Date(this[dateProperty]);
-//   let formattedDate = `${ newDate.getFullYear() }-`;
-//       formattedDate += `${ `0${ newDate.getMonth() + 1 }`.slice(-2) }-`;  // for double digit month
-//       formattedDate += `${ `0${ newDate.getDate() }`.slice(-2) }`;        // for double digit day
-//   return formattedDate;
-// }
 
 
 module.exports = mongoose.model('Audit', AuditSchema)

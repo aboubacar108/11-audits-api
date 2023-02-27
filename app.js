@@ -13,6 +13,10 @@ const app = express();
 // connectDB
 const connectDB = require('./db/connect');
 const authenticateUser = require('./middleware/authentication');
+// convert date
+// const moment = require('moment');
+// const formattedDate = moment().format('L'); 
+
 // routers
 const authRouter = require('./routes/auth');
 const auditsRouter = require('./routes/audits');

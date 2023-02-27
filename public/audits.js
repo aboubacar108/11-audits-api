@@ -17,7 +17,7 @@ async function buildAuditsTable(auditsTable, auditsTableHeader, token, message) 
         for (let i = 0; i < data.audits.length; i++) {
           let editButton = `<td><button type="button" class="editButton" data-id=${data.audits[i]._id}>Edit</button></td>`;
           let deleteButton = `<td><button type="button" class="deleteButton" data-id=${data.audits[i]._id}>Delete</button></td>`;
-          let rowHTML = `<td>${data.audits[i].auditName}</td><td>${data.audits[i].period}</td><td>${data.audits[i].year}</td><td>${data.audits[i].type}</td><td>${data.audits[i].highRiskAeras}</td><td>${data.audits[i].startDate}</td><td>${data.audits[i].status}</td><td>${data.audits[i].completionDate}</td><td>${data.audits[i].auditFindings}</td><td>${data.audits[i].timeSpent}</td>${editButton}${deleteButton}`;
+          let rowHTML = `<th scope='row'>${data.audits[i].auditName}</th><td>${data.audits[i].period}</td><td>${data.audits[i].year}</td><td>${data.audits[i].type}</td><td>${data.audits[i].highRiskAeras}</td><td>${data.audits[i].startDate}</td><td>${data.audits[i].status}</td><td>${data.audits[i].completionDate}</td><td>${data.audits[i].auditFindings}</td><td>${data.audits[i].timeSpent}</td>${editButton}${deleteButton}`;
           let rowEntry = document.createElement("tr");
           rowEntry.innerHTML = rowHTML;
           children.push(rowEntry);
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addingAudit = document.getElementById("adding-audit");
   const auditsMessage = document.getElementById("audits-message");
   const editCancel = document.getElementById("edit-cancel");
-
+  
   // section 2 
   let showing = logonRegister;
   let token = null;
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (suspendInput) {
       return; // we don't want to act on buttons while doing async operations
     }
-    if (e.target.nodeName === "BUTTON") {
+    if (e.target.nodeName === "button") {
       message.textContent = "";
     }
     if (e.target === logoff) {
@@ -215,24 +215,24 @@ document.addEventListener("DOMContentLoaded", () => {
       auditName.value = "";
       year.value = "";
       status.value = "Not started";
-      startDate.value= Date.now();
+      startDate.value= "";
       period.value= "";
       auditFindings.value= 0;
       highRiskAeras.value = "No";
       timeSpent.value = 0;
-      completionDate.value= Date.now();
+      completionDate.value= "";
       addingAudit.textContent = "Add";
     } else if (e.target === editCancel) {
       showing.style.display = "none";
       auditName.value = "";
       year.value = "";
       status.value = "Not started";
-      startDate.value= Date.now();
+      startDate.value= "";
       period.value= "Q1";
       type.value ="Finance";
       highRiskAeras.value = "No";
       timeSpent.value = 0;
-      completionDate.value= Date.now();
+      completionDate.value= "";
       thisEvent = new Event("startDisplay");
       document.dispatchEvent(thisEvent);
     } else if (e.target === addingAudit) {
@@ -270,13 +270,13 @@ document.addEventListener("DOMContentLoaded", () => {
             auditName.value = "";
             year.value = "";
             status.value = "Not started";
-            startDate.value = Date.now();
+            startDate.value = "";
             period.value = "Q1";
             type.value ="Finance";
             auditFindings.value= 0;
             highRiskAeras.value = "No";
             timeSpent.value= 0;
-            completionDate.value= Date.now();
+            completionDate.value= "";
           } else {
             // failure
             message.textContent = data.msg;
@@ -316,13 +316,13 @@ document.addEventListener("DOMContentLoaded", () => {
             auditName.value = "";
             year.value = "";
             status.value = "Not started";
-            startDate.value = Date.now();
+            startDate.value = "";
             period.value ="Q1";
             type.value ="Finance";
             auditFindings.value= 0;
             highRiskAeras.value = "No";
             timeSpent.value = 0;
-            completionDate.value= Date.now();
+            completionDate.value= "";
             thisEvent = new Event("startDisplay");
             document.dispatchEvent(thisEvent);
           } else {
@@ -404,13 +404,13 @@ document.addEventListener("DOMContentLoaded", () => {
           auditName.value = "";
           year.value = "";
           status.value = "Not started";
-          startDate.value = Date.now();
+          startDate.value ="";
           period.value = "Q1";
           type.value ="Finance";
           auditFindings.value= 0;
           highRiskAeras.value ="No";
           timeSpent.value = 0;
-          completionDate.value= Date.now();
+          completionDate.value= "";
           thisEvent = new Event("startDisplay");
           document.dispatchEvent(thisEvent);
         }  else {
@@ -427,3 +427,4 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
 });
+
