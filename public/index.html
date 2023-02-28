@@ -5,19 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- normalize css -->
-    <link rel="stylesheet" href="./normalize.css" />
-    <title>Audits List</title>
+    <link rel="stylesheet" href="./index.css" />
+    <title>Audit Management System</title>
 </head>
 
 <body>
-    <h1>Audits List</h1>
+    <h1>Audit Management System</h1>
     <button type="button" id="logoff" style="display:none;">Logoff</button>
     <hr>
-    <p id="message"></p>
+    <p id="message"> Effective Tracking | Efficient Audits</p>
     <hr>
+
     <div id="logon-register" style="display:none;">
+        <label>Member Logon</label>
         <button type="button" id="logon">Logon</button>
+        <label>Not a member?</label>
         <button type="button" id="register">Register</button>
     </div>
     <div id="logon-div" style="display:none;">
@@ -60,17 +62,17 @@
         <p id="audits-message"></p>
         <table id="audits-table" style="display:none;">
             <tr id="audits-table-header">
-                <th>Name</th>
-                <th>Period</th>
-                <th>Year</th>
-                <th>Type</th>
-                <th>High Risk Aeras</th>
-                <th>Start</th>
-                <th>Status</th>
-                <th>Completion</th>
-                <th>Findings</th>
-                <th>Time Spent</th>
-                <th colspan="2"></th>
+                <th scope='col'>Name</th>
+                <th scope='col'>Period</th>
+                <th scope='col'>Year</th>
+                <th scope='col'>Type</th>
+                <th scope='col'>High Risk Aeras</th>
+                <th scope='col'>Start</th>
+                <th scope='col'>Status</th>
+                <th scope='col'>Completion</th>
+                <th scope='col'>Findings</th>
+                <th scope='col'>Time Spent</th>
+                <th scope='col' colspan="2">Action</th>
             </tr>
         </table>
         <button type="button" id="add-audit">Add audit</button>
@@ -137,6 +139,6 @@
             <button type="button" id="edit-cancel">Cancel</button>
         </form>
     </div>
-    <script src="./audits.js"></script>
+   <script src="./audits.js"></script>
 </body>
 </html>
