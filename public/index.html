@@ -17,20 +17,23 @@
     <hr>
 
     <div id="logon-register" style="display:none;">
-        <label>Member Logon</label>
+        <label><br>Existing or returning?<br><br></label>
         <button type="button" id="logon">Logon</button>
-        <label>Not a member?</label>
+        <label><br><br>First visit?<br><br></label>
         <button type="button" id="register">Register</button>
     </div>
     <div id="logon-div" style="display:none;">
         <form>
+          <div class="imgcontainer">
+            <img src="img_avatar2.jfif" alt="Avatar" class="avatar">
+          </div>
             <div>
                 <label for="email">Email:</label>
-                <input type="email" id="email">
+                <input type="email" placeholder="Enter Email" id="email">
             </div>
             <div>
                 <label for="password">Password:</label>
-                <input type="password" id="password">
+                <input type="password" placeholder="Enter Password"  id="password">
             </div>
             <button type="button" id="logon-button">Logon</button>
             <button type="button" id="logon-cancel">Cancel</button>
@@ -40,19 +43,19 @@
         <form>
             <div>
                 <label for="name">Name:</label>
-                <input type="text" id="name">
+                <input type="text" placeholder="Enter Name" id="name">
             </div>
             <div>
                 <label for="email1">Email:</label>
-                <input type="email" id="email1">
+                <input type="email" placeholder="Enter Email" id="email1">
             </div>
             <div>
                 <label for="password1">Password:</label>
-                <input type="password" id="password1">
+                <input type="password" placeholder="Enter Password" id="password1">
             </div>
             <div>
                 <label for="password2">Verify password:</label>
-                <input type="password" id="password2">
+                <input type="password" placeholder="Enter Password"  id="password2">
             </div>
             <button type="button" id="register-button">Register</button>
             <button type="button" id="register-cancel">Cancel</button>
@@ -139,6 +142,7 @@
             <button type="button" id="edit-cancel">Cancel</button>
         </form>
     </div>
-   <script src="./audits.js"></script>
+    </script>
+    <script src="./audits.js"></script>
 </body>
 </html>
