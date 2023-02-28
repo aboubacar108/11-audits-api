@@ -32,13 +32,13 @@ const createAudit = async (req, res) => {
 
 const updateAudit = async (req, res) => {
   const {
-    body:{auditName,year,startDate,completionDate,auditFindings,timeSpent},
+    body:{auditName,period,year,type},
     user:{userId},
     params:{id:auditId},
   } = req
 
-  if(auditName==='' || year==='' || startDate==='' || completionDate==='' || auditFindings==='' || timeSpent==='') {
-    throw new BadRequestError('Name, Year, Start, Completion, Findings or Time Spent fields cannot be empty')
+  if(auditName==='' || period==='' || year==='' || type==='') {
+    throw new BadRequestError('Name, Period, Year, or Type fields cannot be empty')
   }
   const audit = await Audit.findByIdAndUpdate({_id:auditId, createdBy:userId}, req.body, {new:true,runValidators:true})
 

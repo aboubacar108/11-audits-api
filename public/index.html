@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- normalize css -->
+    <link rel="stylesheet" href="./normalize.css" />
+    <title>Audits List</title>
+</head>
+
+<body>
+    <h1>Audits List</h1>
+    <button type="button" id="logoff" style="display:none;">Logoff</button>
+    <hr>
+    <p id="message"></p>
+    <hr>
+    <div id="logon-register" style="display:none;">
+        <button type="button" id="logon">Logon</button>
+        <button type="button" id="register">Register</button>
+    </div>
+    <div id="logon-div" style="display:none;">
+        <form>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email">
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password">
+            </div>
+            <button type="button" id="logon-button">Logon</button>
+            <button type="button" id="logon-cancel">Cancel</button>
+        </form>
+    </div>
+    <div id="register-div" style="display:none;">
+        <form>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="email1">Email:</label>
+                <input type="email" id="email1">
+            </div>
+            <div>
+                <label for="password1">Password:</label>
+                <input type="password" id="password1">
+            </div>
+            <div>
+                <label for="password2">Verify password:</label>
+                <input type="password" id="password2">
+            </div>
+            <button type="button" id="register-button">Register</button>
+            <button type="button" id="register-cancel">Cancel</button>
+        </form>
+    </div>
+    <div id="audits" style="display:none;">
+        <p id="audits-message"></p>
+        <table id="audits-table" style="display:none;">
+            <tr id="audits-table-header">
+                <th>Name</th>
+                <th>Period</th>
+                <th>Year</th>
+                <th>Type</th>
+                <th>High Risk Aeras</th>
+                <th>Start</th>
+                <th>Status</th>
+                <th>Completion</th>
+                <th>Findings</th>
+                <th>Time Spent</th>
+                <th colspan="2"></th>
+            </tr>
+        </table>
+        <button type="button" id="add-audit">Add audit</button>
+    </div>
+    <div id="edit-audit" style="display:none;">
+        <form>
+            <div>
+                <label for="auditName">Audit name:</label>
+                <input type="text" id="auditName">
+            </div>
+            <div>
+              <label for="year">Year:</label>
+              <input type="text" id="year">
+            </div>
+            <div>
+              <label for="period">Period:</label>
+              <select id="period">
+                  <option value="Q1">Q1</option>
+                  <option value="Q2">Q2</option>
+                  <option value="Q3">Q3</option>
+                  <option value="Q4">Q4</option>
+              </select>
+            </div>
+            <div>
+              <label for="type">Type:</label>
+              <select id="type">
+                  <option value="Finance">Finance</option>
+                  <option value="IT and Security">IT and Security</option>
+                  <option value="Offshore">Offshore</option>
+              </select>
+            </div>
+            <div>
+              <label for="highRiskAeras">High Risk Aeras:</label>
+              <select id="highRiskAeras">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div>
+              <label for="startDate">Start:</label>
+              <input type="date" id="startDate">
+            </div>
+            <div>
+              <label for="status">Status:</label>
+              <select id="status">
+                  <option value="Completed">Completed</option>
+                  <option value="In progress">In progress</option>
+                  <option value="Not started">Not started</option>
+              </select>
+            </div>
+            <div>
+                <label for="completionDate">Completion:</label>
+                <input type="date" id="completionDate">
+            </div>
+            <div>
+              <label for="auditFindings">Findings:</label>
+              <input type="number" id="auditFindings">
+            </div>
+            <div>
+              <label for="timeSpent">Time Spent:</label>
+              <input type="number" id="timeSpent">
+            </div>
+            <button type="button" id="adding-audit">Add</button>
+            <button type="button" id="edit-cancel">Cancel</button>
+        </form>
+    </div>
+    <script src="./audits.js"></script>
+</body>
+</html>
